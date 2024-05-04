@@ -1,15 +1,16 @@
 {
   "name": "api",
-  "version": "20",
+  "version": "1",
   "description": "",
   "main": "src/app.js",
   "type": "module",
   "engines": {
-    "node": "20"
+    "node": ">=16.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
