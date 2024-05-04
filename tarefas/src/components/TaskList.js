@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchTasksThunk } from "../features/tasks/tasksSlice";
 import TaskItem from "./TaskItem";
+import { Box } from "@mui/material";
 
 function TaskList({ setCurrentTask }) {
   const dispatch = useDispatch();
@@ -12,11 +13,11 @@ function TaskList({ setCurrentTask }) {
   }, [dispatch]);
 
   return (
-    <div>
+    <Box sx={{ mt: 2 }}>
       {tasks.map((task) => (
-        <TaskItem key={task.id} task={task} setCurrentTask={setCurrentTask} />
+        <TaskItem key={task._id} task={task} setCurrentTask={setCurrentTask} />
       ))}
-    </div>
+    </Box>
   );
 }
 
