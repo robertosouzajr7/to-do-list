@@ -11,8 +11,8 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
-    allowedHeaders: ["Content-Type", "Authorization"], // Headers permitidos
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 app.use(bodyParser.json());
