@@ -1,14 +1,20 @@
 import express from "express";
 import bodyParser from "body-parser";
+import cors from "cors";
 import userRouter from "./routers/userRouter.js";
 import taskRouter from "./routers/taskRouter.js";
 import mongoose from "mongoose";
+
 import dotenv from "dotenv";
 
 dotenv.config();
-
 const app = express();
-
+app.use(
+  cors({
+    methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
+    allowedHeaders: ["Content-Type", "Authorization"], // Headers permitidos
+  })
+);
 app.use(bodyParser.json());
 
 app.use("/api", userRouter);
