@@ -38,7 +38,7 @@ Uma API de To-Do List construída em Node.js, Express, e MongoDB, que permite cr
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/username/todo-list-api.git
+   git clone https://github.com/robertosouzajr7/to-do-list-falcon.git
    ```
 
 2.Navegue até o diretório do projeto:
@@ -53,7 +53,7 @@ JWT_SECRET=<YOUR_JWT_SECRET>
 EMAIL_USER=<YOUR_EMAIL_USER>
 EMAIL_PASS=<YOUR_EMAIL_PASS>
 JWT_EXPIRES_IN=<YOUR_JWT_EXPIRES_IN>
-PORT=<YOUR_PORT>
+PORT=5000
 
 ## Execução
 
