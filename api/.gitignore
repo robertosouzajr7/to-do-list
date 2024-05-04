@@ -16,3 +16,4 @@
 # Ignorar diretórios de build
 /dist/
 /build/
+.vercel
