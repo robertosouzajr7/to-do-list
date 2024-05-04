@@ -11,7 +11,6 @@ const app = express();
 
 app.use(bodyParser.json());
 
-// Configura rotas
 app.use("/api", userRouter);
 app.use("/api", taskRouter);
 
