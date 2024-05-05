@@ -24,7 +24,6 @@ Uma API de To-Do List construída em Node.js, Express, e MongoDB, que permite cr
 - **Usuários**:
   - **Registrar**: Cria um novo usuário.
   - **Login**: Autentica um usuário.
-  - **Logout**: Remove o token de autenticação.
 
 ## Configuração
 
@@ -80,7 +79,6 @@ npm start
 
 - **POST /api/users/register** - Registra um novo usuário.
 - **POST /api/users/login** - Faz login com um usuário.
-- **POST /api/users/logout** - Faz logout de um usuário.
 
 ## Contribuição
 
