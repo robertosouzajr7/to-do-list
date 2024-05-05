@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchTasks, addTask, updateTask, deleteTask } from "./tasksApi";
+const API_URL = "https://api-to-do-list-beta.vercel.app/api/tasks";
 
 const initialState = {
   tasks: [],
@@ -24,14 +25,11 @@ export const updateTaskThunk = createAsyncThunk(
   "tasks/updateTask",
   async (task, { rejectWithValue }) => {
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/tasks/${task._id}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(task),
-        }
-      );
+      const response = await fetch(`${API_URL}/${task._id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(task),
+      });
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -47,7 +45,7 @@ export const deleteTaskThunk = createAsyncThunk(
   "tasks/deleteTask",
   async (id, { rejectWithValue }) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/tasks/${id}`, {
+      const response = await fetch(`${API_URL}/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/tasks";
+const API_URL = "https://api-to-do-list-beta.vercel.app/api/tasks";
 
 export const fetchTasks = async () => {
   try {
