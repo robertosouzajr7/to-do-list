@@ -9,6 +9,7 @@ import {
   CircularProgress,
 } from "@mui/material";
 import {} from "@mui/icons-material";
+import UserCreateModal from "../components/UserCreateModal";
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +17,17 @@ function LoginPage() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const API_URL = "https://api-to-do-list-beta.vercel.app/api";
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
@@ -99,6 +111,10 @@ function LoginPage() {
           >
             {loading ? <CircularProgress size={24} /> : "Login"}
           </Button>
+          <Button variant="outlined" onClick={handleOpenModal}>
+            Criar novo usuário
+          </Button>
+          <UserCreateModal handleClose={handleCloseModal} open={modalOpen} />
           {error && <Typography color="error">{error}</Typography>}
         </Box>
       </Box>
